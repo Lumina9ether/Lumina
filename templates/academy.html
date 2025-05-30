@@ -2,63 +2,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Lumina Academy</title>
-  <link href="static/styles.css" rel="stylesheet"/>
+  <link href="/static/styles.css" rel="stylesheet"/>
+  <link href="/static/academy.css" rel="stylesheet"/>
   <style>
     body {
-      background: #0b0c2a;
-      color: #fff;
+      margin: 0;
       font-family: Orbitron, sans-serif;
+      color: #ffffff;
+      background: #000;
+      overflow-x: hidden;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-    }
+    .center { text-align: center; }
     .glow-title {
-      text-align: center;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff, 0 0 20px #8F00FF;
+      margin: 20px 0;
+      text-align: center;
+      display: block;
     }
-    .community-chat, .membership-board, .video-upload {
-      margin-top: 40px;
+    .box { border: 2px solid #00ffff; border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 800px; background: rgba(0, 0, 0, 0.6); box-shadow: 0 0 15px #00ffff55; }
+    #orb { width: 100px; height: 100px; margin: 20px auto; border-radius: 50%; background: radial-gradient(circle, #00ffff 0%, #8F00FF 100%); box-shadow: 0 0 20px #00ffffaa; animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
     }
+    textarea { width: 90%; margin: 10px auto; padding: 10px; border-radius: 10px; border: 1px solid #6e00ff; box-shadow: 0 0 10px #6e00ff; background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem; }
+    button { margin: 5px; padding: 10px 20px; border: none; border-radius: 10px; background: #00ffff; color: #000; cursor: pointer; font-weight: bold; }
+    button:hover { background: #8F00FF; color: #fff; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="glow-title">Lumina Academy</h1>
-    <p>Welcome to your exclusive Lumina Academy space. Here you’ll find your training modules, live community chat, and membership insights.</p>
+  <canvas id="stars"></canvas>
 
-    <div class="community-chat">
-      <h2>Community Chat</h2>
-      <p>Join the conversation! Connect with fellow members and share insights.</p>
-      <!-- Placeholder for community chat widget -->
-      <div style="background: #111; padding: 20px; border-radius: 10px;">
-        [Community Chat Integration Here]
-      </div>
-    </div>
+  <div id="orb"></div>
+  <h1 class="glow-title">Welcome to Lumina Academy</h1>
 
-    <div class="video-upload">
-      <h2>Video Uploads</h2>
-      <p>Access exclusive video modules and resources.</p>
-      <!-- Placeholder for video upload feature -->
-      <div style="background: #111; padding: 20px; border-radius: 10px;">
-        [Loom Video Upload & View Integration Here]
-      </div>
-    </div>
-
-    <div class="membership-board">
-      <h2>Membership Board</h2>
-      <p>See who’s online and track your progress within the academy.</p>
-      <!-- Placeholder for membership tracking -->
-      <div style="background: #111; padding: 20px; border-radius: 10px;">
-        [Membership Board Integration Here]
-      </div>
-    </div>
+  <div class="box">
+    <h2>Webinar Access</h2>
+    <p>Watch the latest webinars hosted by Lumina Academy.</p>
+    <div><em>Embed Loom video links or webinars here</em></div>
   </div>
+
+  <div class="box">
+    <h2>Modules</h2>
+    <p>Browse course modules and resources.</p>
+    <div><em>Dynamic module list will appear here</em></div>
+  </div>
+
+  <div class="box">
+    <h2>Community Chat</h2>
+    <p>Engage with fellow members in the chat.</p>
+    <div><em>Dynamic chat will appear here</em></div>
+  </div>
+
+  <div class="box">
+    <h2>Live Chat</h2>
+    <p>Talk live with mentors or members.</p>
+    <div><em>Dynamic live chat will appear here</em></div>
+  </div>
+
+  <div class="box">
+    <h2>Member Board</h2>
+    <p>Track active members and see who is online.</p>
+    <div><em>Member tracking will appear here</em></div>
+  </div>
+
+  <div class="box center">
+    <textarea id="user-input" placeholder="Ask Lumina a question..."></textarea>
+    <br/>
+    <button id="hey-lumina-button">Hey Lumina</button>
+    <button id="stop-button">Stop Lumina</button>
+    <div id="subtitles"></div>
+  </div>
+
+  <script src="/static/stars.js"></script>
+  <script src="/static/matrix.js"></script>
+  <script src="/static/script.js"></script>
 </body>
 </html>
